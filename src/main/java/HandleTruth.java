@@ -8,6 +8,11 @@ public class HandleTruth {
 
         // use map to count the occurrences of each word
         HashMap<String, Integer> wordMap = new HashMap<>();
+
+        // Make sure that the input is valid
+        if(msg == null || msg.length() == 0)
+            return wordMap.entrySet();
+
         for (String word : words) {
             if (wordMap.containsKey(word)) {
                 wordMap.put(word, wordMap.get(word) + 1);
