@@ -1,17 +1,13 @@
 import java.util.*;
 
 public class HandleTruth {
-    public static Set wordCount(String msg) {
+    public static TreeMap<Integer, Set<String>> wordCount(String msg) {
 
         // split the message into word set
         String[] words = msg.split(" ");
 
         // use map to count the occurrences of each word
         HashMap<String, Integer> wordMap = new HashMap<>();
-
-        // Make sure that the input is valid
-        if(msg == null || msg.length() == 0)
-            return wordMap.entrySet();
 
         for (String word : words) {
             if (wordMap.containsKey(word)) {
@@ -37,6 +33,6 @@ public class HandleTruth {
         for (Map.Entry<Integer, Set<String>> entry : sortedMap.entrySet()) {
             System.out.println(entry);
         }
-        return sortedMap.entrySet();
+        return sortedMap;
     }
 }
