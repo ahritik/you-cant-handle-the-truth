@@ -1,26 +1,33 @@
 import org.junit.Test;
-
-import java.util.Map;
-import java.util.Set;
+import org.junit.Assert.*;
+import java.util.*;
+import static org.junit.Assert.*;
 
 public class HandleTruthTest {
     @Test
     public void makeshiftTest() {
-        String[][] testMessages = {
-                {"son we live in a world that has walls and those walls have to be guarded by men with guns whos gonna do it you you lieutenant weinberg i have a greater responsibility than you can possibly fathom you weep for santiago and you curse the marines you have that luxury you have the luxury of not knowing what i know that santiagos death while tragic probably saved lives and my existence while grotesque and incomprehensible to you saves lives you dont want the truth because deep down in places you dont talk about at parties you want me on that wall you need me on that wall we use words like honor code loyalty we use these words as the backbone of a life spent defending something you use them as a punchline i have neither the time nor the inclination to explain myself to a man who rises and sleeps under the blanket of the very freedom that i provide and then questions the manner in which i provide it i would rather you just said thank you and went on your way otherwise i suggest you pick up a weapon and stand a post either way i dont give a damn what you think you are entitled to"},
-                {},
-                {""},
-                {" "},
-                {"this is my test case example for my test"},
+        String[] testMessages = {
+                "",
+                " ",
+                "this is my test case example for my test",
+                null,
+                "ha ha ha hq ho ho ho",
+                "I'm blue, da ba dee da ba daa Da ba dee da ba daa, da ba dee da ba daa",
         };
 
-        String[][] outputs = {
 
-        };
+        // First Test Case
+        TreeMap<Integer, Set<String>> output1 = new TreeMap<>(Collections.reverseOrder());
+
+        // Second Test Case
+        TreeMap<Integer, Set<String>> output2 = new TreeMap<>(Collections.reverseOrder());
+
+
+        TreeMap[] expected = {output1, output2};
 
         for(int i = 0; i < testMessages.length; i++){
-            Set output = HandleTruth.wordCount(testMessages[i][0]);
-            System.out.println(output);
+            Set actual = HandleTruth.wordCount(testMessages[i]);
+            assertEquals(actual, expected[i]);
         }
     }
 
