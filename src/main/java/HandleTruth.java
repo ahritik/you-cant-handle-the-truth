@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class HandleTruth {
+
+    //added String msg as a parameter
     public static TreeMap<Integer, Set<String>> wordCount(String msg) {
 
         // split the message into word set
